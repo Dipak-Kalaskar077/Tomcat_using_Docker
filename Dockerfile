@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
 
 # Download and extract Tomcat
 WORKDIR /opt
-ADD -fSL https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.97/bin/apache-tomcat-9.0.97.tar.gz -o apache-tomcat-9.0.97.tar.gz && \
+RUN curl -fSL https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.97/bin/apache-tomcat-9.0.97.tar.gz -o apache-tomcat-9.0.97.tar.gz && \
     tar -xzf apache-tomcat-9.0.97.tar.gz && \
     rm apache-tomcat-9.0.97.tar.gz /
 
